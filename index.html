@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="aercwardeth — code, interests, and a few things along the way.">
+  <title>aercwardeth</title>
+  <style>
+    * { box-sizing: border-box; }
+    html { color: #000; background: #fff; font-family: "Times New Roman", Times, serif; }
+    body { max-width: 760px; margin: 0 auto; padding: 54px 28px; font-size: 20px; line-height: 1.6; }
+    header { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; }
+    a { color: #000; text-underline-offset: 4px; }
+    .name { font-size: 26px; font-weight: bold; text-decoration: none; }
+    nav { display: flex; gap: 24px; }
+    main { margin-top: 112px; }
+    h1 { font-size: 36px; line-height: 1.2; font-weight: normal; margin: 0 0 28px; }
+    p { margin: 10px 0; }
+    strong { font-weight: 700; }
+    .word { display: inline-block; min-width: 100px; }
+    section[hidden] { display: none; }
+    .empty { margin-top: 24px; }
+    @media (max-width: 520px) {
+      body { padding: 30px 24px; }
+      header { align-items: flex-start; flex-direction: column; gap: 12px; }
+      nav { gap: 24px; }
+      main { margin-top: 76px; }
+      h1 { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="name" href="#" aria-label="aercwardeth home">aercwardeth</a>
+    <nav aria-label="Main navigation">
+      <a href="#reels">reels</a>
+      <a href="#blog">blog</a>
+      <a href="#projects">projects</a>
+    </nav>
+  </header>
+  <main>
+    <section id="home">
+      <h1>I'm aercwardeth.</h1>
+      <p>I love <strong class="word" id="interest" style="color: #8b281f">tech</strong></p>
+      <p>I write code in <strong class="word" id="language" style="color: #174b88">C++</strong></p>
+    </section>
+    <section id="reels" hidden><h1>reels</h1><p class="empty">Nothing here yet.</p></section>
+    <section id="blog" hidden><h1>blog</h1><p class="empty">Nothing here yet.</p></section>
+    <section id="projects" hidden><h1>projects</h1><p class="empty">Nothing here yet.</p></section>
+  </main>
+  <script>
+    const interests = ['tech', 'software', 'gaming', 'reading', 'football', 'running'];
+    const languages = ['C++', 'JS/TS', 'Golang', 'Python'];
+    const colors = ['#8b281f', '#174b88', '#35612b', '#713b80', '#814e13', '#006265'];
+    let tick = 0;
+    function rotate() {
+      tick += 1;
+      for (const [id, words, offset] of [['interest', interests, 0], ['language', languages, 1]]) {
+        const element = document.getElementById(id);
+        element.textContent = words[tick % words.length];
+        element.style.color = colors[(tick + offset) % colors.length];
+      }
+    }
+    setInterval(rotate, 2000);
+    function showPage() {
+      const requested = location.hash.slice(1);
+      const page = ['reels', 'blog', 'projects'].includes(requested) ? requested : 'home';
+      document.querySelectorAll('main section').forEach(section => { section.hidden = section.id !== page; });
+      document.querySelectorAll('nav a').forEach(link => {
+        if (link.hash === '#' + page) link.setAttribute('aria-current', 'page');
+        else link.removeAttribute('aria-current');
+      });
+      document.title = page === 'home' ? 'aercwardeth' : page + ' — aercwardeth';
+    }
+    window.addEventListener('hashchange', showPage);
+    showPage();
+  </script>
+</body>
+</html>
