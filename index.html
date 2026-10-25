@@ -146,6 +146,31 @@
         <li><strong>Develop and validate:</strong> Build the solution and check it against the requirements and acceptance criteria.</li>
         <li><strong>Measure and adapt:</strong> Track KPIs, review outcomes, and adjust the plan as needed.</li>
       </ul>
+      <h2><span class="chit-number">#5</span>Web3 Development Toolkit &amp; Workflow</h2>
+      <ul class="chit-tags" aria-label="Tags">
+        <li>#web3</li>
+        <li>#solidity</li>
+        <li>#foundry</li>
+        <li>#testing</li>
+        <li>#dapp</li>
+      </ul>
+      <p>A Web3 app involves more than smart contracts: the backend, frontend, wallet connection, and on-chain data need to work together. A local chain makes it possible to test the full flow before deploying to a public network.</p>
+      <ul class="chit-list">
+        <li><strong>Contracts and local testing:</strong> <a href="https://docs.soliditylang.org/en/latest/">Solidity</a> with <a href="https://getfoundry.sh/forge/deploying.html">Foundry</a>: Forge builds and tests contracts, Anvil runs a local chain, and Cast interacts with contracts from the command line.</li>
+        <li><strong>Backend and frontend:</strong> Use the stack that fits the app. <a href="https://viem.sh/docs/getting-started">viem</a> handles TypeScript interactions with EVM chains; for React, <a href="https://wagmi.sh/react">wagmi</a> provides hooks and <a href="https://rainbowkit.com/en-US/docs/introduction">RainbowKit</a> adds wallet-connection UI.</li>
+        <li><strong>On-chain data:</strong> <a href="https://ponder.sh/">Ponder</a> or <a href="https://thegraph.com/docs/en/about/">The Graph</a> can index contract events and make that data available to the app.</li>
+        <li><strong>Simulation and debugging:</strong> <a href="https://tenderly.co/products/simulator">Tenderly</a> can simulate transactions, help debug execution, and support fork-based testing.</li>
+      </ul>
+      <ol class="chit-list">
+        <li>Define user flows and expected results, such as depositing, purchasing, or lending.</li>
+        <li>Write the smart contracts and test them with Forge.</li>
+        <li>Start Anvil and deploy the contracts locally.</li>
+        <li>Write Bash scripts that use Cast commands to repeat end-to-end scenarios, including failure cases.</li>
+        <li>Connect the backend, frontend, and indexer to the local contracts and test the complete flow.</li>
+        <li>Test on a testnet or fork, fix issues, and review security.</li>
+        <li>Deploy to the target network, verify the contracts, set up monitoring, and launch.</li>
+      </ol>
+      <p>AI can help draft the Bash scripts and connect the pieces into end-to-end scenarios. Run the flows locally and check their results before relying on them.</p>
     </section>
   </main>
   <script>
