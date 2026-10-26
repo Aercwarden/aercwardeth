@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Short notes on system design, research, software principles, project planning, and Web3 development.">
+  <link rel="canonical" href="https://aercwarden.github.io/aercwardeth/chits.html">
+  <title>Chits: System Design, Research &amp; Web3 Notes | aercwardeth</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="site-banner" aria-label="Site status">This site is still under development. I’m adding to it whenever I find some free time.</aside>
+  <header>
+    <a class="name" href="index.html" aria-label="aercwardeth home">aercwardeth</a>
+    <nav aria-label="Main navigation">
+      <a href="index.html#reels">reels</a>
+      <a href="index.html#blog">blog</a>
+      <a href="index.html#projects">projects</a>
+      <a href="index.html#books">books</a>
+      <a href="chits.html" aria-current="page">chits</a>
+    </nav>
+  </header>
+  <main>
+    <section id="chits">
+      <h1>chits</h1>
+      <p>I could post these on social media, but I don’t want to chase engagement or give platforms more data. Before AI tools became widely available, I might have felt differently; now too much of social media feels recycled and built to chase clicks. Chits are small gifts from me to you: useful or interesting things, no clickbait or ads. I hope you find one when you need it.</p>
+      <h2><span class="chit-number">#1</span>Developing a Research Agenda</h2>
+      <ul class="chit-tags" aria-label="Tags">
+        <li>#research</li>
+        <li>#paper-reading</li>
+        <li>#literature</li>
+        <li>#learning</li>
+        <li>#collaboration</li>
+      </ul>
+      <ul class="chit-list">
+        <li>Keep a written list of open questions, including ideas beyond your current work.</li>
+        <li>Use those questions to guide paper searches, research digests, and a small set of journals.</li>
+        <li>Try to read a paper each week: start with the introduction and results, then dig into proofs or experiments when useful.</li>
+        <li>Follow useful older papers through the later work that cites them.</li>
+        <li>Review and record what you have learned regularly; spaced-repetition tools can help retain the main points.</li>
+        <li>Share ideas, collaborate, and learn from people with complementary skills.</li>
+      </ul>
+      <p class="chit-source">Adapted from Giuseppe “gappy” Paleologo, <cite><a href="https://sangmino.github.io/Documents/r60.pdf">Buy-Side Quant Job Advice</a></cite>, February 21, 2024.</p>
+      <h2><span class="chit-number">#2</span>Pragmatic Design Principles</h2>
+      <ul class="chit-tags" aria-label="Tags">
+        <li>#software-design</li>
+        <li>#solid</li>
+        <li>#dry</li>
+        <li>#kiss</li>
+        <li>#separation-of-concerns</li>
+      </ul>
+      <ul class="chit-list">
+        <li>Apply <a href="https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/extensibility/writing-extensible-code">SOLID</a> (five principles for extensible object-oriented design), <a href="https://media.pragprog.com/titles/tpp20/dry.pdf">DRY</a> (give each piece of knowledge one authoritative representation), <a href="https://handbook.eng.kempnerinstitute.harvard.edu/s2_swe_for_research/software_design_principles.html">KISS</a> (favor the simplest design that solves the problem), and <a href="https://csrc.nist.gov/glossary/term/separation_of_concerns">separation of concerns</a> (give each module a distinct role) pragmatically.</li>
+      </ul>
+      <h2><span class="chit-number">#3</span>Project Planning &amp; Delivery</h2>
+      <ul class="chit-tags" aria-label="Tags">
+        <li>#project-management</li>
+        <li>#project-planning</li>
+        <li>#research</li>
+        <li>#requirements</li>
+        <li>#feasibility</li>
+        <li>#risk-management</li>
+      </ul>
+      <p>A flexible sequence: research and formal documentation depend on the project, and risks and measures should be revisited as work progresses.</p>
+      <ul class="chit-list">
+        <li><strong>Initiate:</strong> Frame the problem and context, identify stakeholders, and set the aim, objectives, and desired outcomes.</li>
+        <li><strong>Research, when relevant:</strong> Develop research questions, review relevant literature, and conduct research and analysis. For other projects, investigate the domain or technical context as needed.</li>
+        <li><strong>Define requirements and scope:</strong> Analyze stakeholder needs; set the scope, deliverables, acceptance criteria, assumptions, constraints, and limitations. Write a Statement of Work (SOW) when a formal agreement is needed.</li>
+        <li><strong>Assess feasibility and risk:</strong> Analyze technical, financial, and operational viability; consider legal, schedule, environmental, and social factors where relevant. Record risks and mitigations.</li>
+        <li><strong>Plan delivery:</strong> Create a Project Management Plan covering milestones, schedule, budget, resources, roles, communication, quality, change control, and ongoing risk management. Define performance indicators (KPIs), baselines, and targets.</li>
+        <li><strong>Develop and validate:</strong> Build the solution and check it against the requirements and acceptance criteria.</li>
+        <li><strong>Measure and adapt:</strong> Track KPIs, review outcomes, and adjust the plan as needed.</li>
+      </ul>
+      <h2><span class="chit-number">#4</span>Web3 Development Toolkit &amp; Workflow</h2>
+      <ul class="chit-tags" aria-label="Tags">
+        <li>#web3</li>
+        <li>#solidity</li>
+        <li>#foundry</li>
+        <li>#testing</li>
+        <li>#dapp</li>
+      </ul>
+      <p>A Web3 app involves more than smart contracts: the backend, frontend, wallet connection, and on-chain data need to work together. A local chain makes it possible to test the full flow before deploying to a public network.</p>
+      <ul class="chit-list">
+        <li><strong>Contracts and local testing:</strong> <a href="https://docs.soliditylang.org/en/latest/">Solidity</a> with <a href="https://getfoundry.sh/forge/deploying.html">Foundry</a>: Forge builds and tests contracts, Anvil runs a local chain, and Cast interacts with contracts from the command line.</li>
+        <li><strong>Backend and frontend:</strong> Use the stack that fits the app. <a href="https://viem.sh/docs/getting-started">viem</a> handles TypeScript interactions with EVM chains; for React, <a href="https://wagmi.sh/react">wagmi</a> provides hooks and <a href="https://rainbowkit.com/en-US/docs/introduction">RainbowKit</a> adds wallet-connection UI.</li>
+        <li><strong>On-chain data:</strong> <a href="https://ponder.sh/">Ponder</a> or <a href="https://thegraph.com/docs/en/about/">The Graph</a> can index contract events and make that data available to the app.</li>
+        <li><strong>Simulation and debugging:</strong> <a href="https://tenderly.co/products/simulator">Tenderly</a> can simulate transactions, help debug execution, and support fork-based testing.</li>
+      </ul>
+      <ol class="chit-list">
+        <li>Define user flows and expected results, such as depositing, purchasing, or lending.</li>
+        <li>Write the smart contracts and test them with Forge.</li>
+        <li>Start Anvil and deploy the contracts locally.</li>
+        <li>Write Bash scripts that use Cast commands to repeat end-to-end scenarios, including failure cases.</li>
+        <li>Connect the backend, frontend, and indexer to the local contracts and test the complete flow.</li>
+        <li>Test on a testnet or fork, fix issues, and review security.</li>
+        <li>Deploy to the target network, verify the contracts, set up monitoring, and launch.</li>
+      </ol>
+      <p>AI can help draft the Bash scripts and connect the pieces into end-to-end scenarios. Run the flows locally and check their results before relying on them.</p>
+      <h2 id="create-yourself"><span class="chit-number">#5</span>Create Yourself</h2>
+      <ul class="chit-tags" aria-label="Tags">
+        <li>#creativity</li>
+        <li>#self-development</li>
+        <li>#psychology</li>
+      </ul>
+      <blockquote class="chit-quote" cite="https://www.goodreads.com/quotes/704183-but-if-you-have-nothing-at-all-to-create-then">
+        <p>“But, if you have nothing at all to create, then perhaps you create yourself.”</p>
+      </blockquote>
+      <p class="chit-source">Attributed to C. G. Jung, via <a href="https://www.goodreads.com/quotes/704183-but-if-you-have-nothing-at-all-to-create-then">Goodreads</a>.</p>
+      <h2><span class="chit-number">#6</span>System Design</h2>
+      <ul class="chit-tags" aria-label="Tags">
+        <li>#system-design</li>
+        <li>#caching</li>
+        <li>#queues</li>
+        <li>#load-balancing</li>
+        <li>#databases</li>
+        <li>#storage</li>
+        <li>#reliability</li>
+      </ul>
+      <ul class="chit-list">
+        <li><strong>Slow reads</strong> → add a cache</li>
+        <li><strong>Slow writes</strong> → add a queue</li>
+        <li><strong>Too much traffic</strong> → load balancer</li>
+        <li><strong>DB struggling</strong> → read replicas</li>
+        <li><strong>Files</strong> → object storage + CDN</li>
+        <li><strong>Everything breaks</strong> → retries, timeouts, logs</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
