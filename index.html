@@ -3,70 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="aercwardeth — code, interests, and a few things along the way.">
-  <link rel="canonical" href="https://aercwarden.github.io/aercwardeth/">
-  <title>aercwardeth</title>
+  <meta http-equiv="refresh" content="0; url=https://aercwarden.github.io/">
+  <link rel="canonical" href="https://aercwarden.github.io/">
   <link rel="stylesheet" href="styles.css">
+  <title>aercwardeth — page moved</title>
+  <script>
+    const destination = new URL('https://aercwarden.github.io/');
+    destination.hash = location.hash;
+    location.replace(destination.href);
+  </script>
 </head>
 <body>
-  <aside class="site-banner" aria-label="Site status">This site is still under development. I’m adding to it whenever I find some free time.</aside>
-  <header>
-    <a class="name" href="#" aria-label="aercwardeth home">aercwardeth</a>
-    <nav aria-label="Main navigation">
-      <a href="#reels">reels</a>
-      <a href="#blog">blog</a>
-      <a href="#projects">projects</a>
-      <a href="#books">books</a>
-      <a href="chits.html">chits</a>
-    </nav>
-  </header>
   <main>
-    <section id="home">
-      <h1>I'm aercwardeth.</h1>
-      <p>I like technology, software, gaming, reading, football, and running.</p>
-      <p>I write code in C++, JS/TS, Golang, Python, and Solidity.</p>
-      <h2>What I work on</h2>
-      <p>Web2 and Web3 development, backend development, databases, applied AI, blockchain, and algorithmic trading.</p>
-    </section>
-    <section id="reels" hidden><h1>reels</h1><p class="empty">Nothing here yet.</p></section>
-    <section id="blog" hidden><h1>blog</h1><p class="empty">Nothing here yet.</p></section>
-    <section id="projects" hidden><h1>projects</h1><p class="empty">Nothing here yet.</p></section>
-    <section id="books" hidden>
-      <h1>books I've read</h1>
-      <p class="book-key">[x] means I recommend this book.</p>
-      <ul class="book-list">
-        <li>
-          <cite><a href="https://www.gitforgits.com/book/goprogrammingcookbook">Go Programming Cookbook: Over 75+ recipes to program microservices, networking, database and APIs using Golang</a></cite>
-          <span class="book-citation">Ian Taylor. GitforGits, 2024. ISBN 978-81-19177-37-0.</span>
-        </li>
-        <li>
-          <cite><a href="https://www.manning.com/books/grokking-algorithms">Grokking Algorithms: An Illustrated Guide for Programmers and Other Curious People</a></cite> [x]
-          <span class="book-citation">Aditya Y. Bhargava. Manning Publications, 2016. ISBN 978-1-61729-223-1.</span>
-        </li>
-        <li>
-          <cite><a href="https://us.macmillan.com/books/9780805062991/thenumberdevil/">The Number Devil: A Mathematical Adventure</a></cite>
-          <span class="book-citation">Hans Magnus Enzensberger. Illustrated by Rotraut Susanne Berner; translated by Michael Henry Heim. Holt Paperbacks, 2000. ISBN 978-0-8050-6299-1.</span>
-        </li>
-      </ul>
-    </section>
+    <h1>This page has moved.</h1>
+    <p>Continue to <a href="https://aercwarden.github.io/">aercwarden.github.io</a>.</p>
   </main>
-  <script>
-    function showPage() {
-      const requested = location.hash.slice(1);
-      if (requested === 'chits') {
-        location.replace(new URL('chits.html', location.href));
-        return;
-      }
-      const page = ['reels', 'blog', 'projects', 'books'].includes(requested) ? requested : 'home';
-      document.querySelectorAll('main section').forEach(section => { section.hidden = section.id !== page; });
-      document.querySelectorAll('nav a').forEach(link => {
-        if (link.hash === '#' + page) link.setAttribute('aria-current', 'page');
-        else link.removeAttribute('aria-current');
-      });
-      document.title = page === 'home' ? 'aercwardeth' : page + ' — aercwardeth';
-    }
-    window.addEventListener('hashchange', showPage);
-    showPage();
-  </script>
 </body>
 </html>
